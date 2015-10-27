@@ -1,6 +1,5 @@
 
 import javafx.geometry.Point3D;
-
 import java.util.Scanner;
 
 /**
@@ -36,4 +35,5 @@ public class PointApp {
         return (int) (Math.sqrt(Math.pow(second.getX() - first.getX(), 2) + Math.pow(second.getY() - first.getY(), 2))
                 + Math.pow(second.getZ() - first.getZ(), 2));
     }
+
 }
