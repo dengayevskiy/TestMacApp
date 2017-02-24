@@ -4,9 +4,49 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>TestMacApp</groupId>
-    <artifactId>TestMacApp</artifactId>
+    <groupId>org.test</groupId>
+    <artifactId>test-mac-app</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.4.1.RELEASE</version>
+    </parent>
 
+    <modules>
+        <module>module1</module>
+        <module>module2</module>
+    </modules>
+
+    <scm>
+        <developerConnection>scm:git:https://api.bintray.com/maven/den8repo/den_test_repo/maven-example/</developerConnection>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>bintray-den8repo-den_test_repo</id>
+            <name>den8repo-den_test_repo</name>
+            <url>https://api.bintray.com/maven/den8repo/den_test_repo/maven-example/;publish=1</url>
+        </repository>
+    </distributionManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.5.3</version>
+                    <configuration>
+                        <tagNameFormat>v.@{project.version}</tagNameFormat>
+                        <pushChanges>false</pushChanges> <!--Release Plugin don't push to remote-->
+                        <localCheckout>true</localCheckout> <!--Release Plugin clone from local repo-->
+                        <preparationGoals>clean install</preparationGoals>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 </project>
