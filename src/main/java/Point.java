@@ -30,6 +30,6 @@ public class Point {
         y = point.y;
         z = point.z;
     }
-    //smth
+    //smth1
 
 }
