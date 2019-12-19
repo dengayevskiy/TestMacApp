@@ -24,10 +24,4 @@ public class Point {
         y = newY;
         z = newZ;
     }
-
-    void moveTo(Point point) {
-        x = point.x;
-        y = point.y;
-        z = point.z;
-    }
 }
