@@ -30,8 +30,4 @@ public class Point {
         y = point.y;
         z = point.z;
     }
-    //smth1
-    //smth2
-    //smth3
-
 }
